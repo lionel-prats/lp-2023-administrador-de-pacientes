@@ -1,4 +1,9 @@
+import { useState, useEffect } from 'react';
+
 const Formulario = () => {
+  const [ nombre, setNombre ] = useState('');
+
+
   return (
     <div className="md:w-1/2 lg:w-2/5">
         <h2 className="font-black text-3xl text-center">Segumiento Pacientes</h2>
@@ -6,7 +11,7 @@ const Formulario = () => {
           Añade Pacientes y{' '}
           <span className="text-indigo-600 font-bold">administralos</span>  
         </p>
-        <form className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
+        <form className="bg-white shadow-md rounded-lg py-10 px-5 mb-10 m-3">
           <div className="mb-5">
             <label 
               htmlFor="mascota" 
@@ -18,6 +23,8 @@ const Formulario = () => {
               type="text" 
               placeholder="Nombre de la Mascota"
               id="mascota"
+              value= {nombre}
+              onChange={ (e) => setNombre(e.target.value) }
             />
           </div>
           <div className="mb-5">
